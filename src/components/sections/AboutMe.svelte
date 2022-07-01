@@ -2,8 +2,8 @@
   import Section from '../layout/Section.svelte';
 </script>
 
-<Section sectionNo={1} title="About Me">
-  <div class="flex gap-4">
+<Section id="about" sectionNo={1} title="About Me">
+  <div class="flex flex-col md:flex-row gap-12">
     <div>
       <div>
         <p>
@@ -26,19 +26,23 @@
         </ul>
       </div>
     </div>
-    <div>
-      <div class="image bg-gray-500">Image Placeholder</div>
+    <div class="text-center w-full">
+      <div class="image bg-gray-500 my-0 mx-auto">Image Placeholder</div>
     </div>
   </div>
 </Section>
 
 <style>
+  :root {
+    --image-width: 300px;
+  }
+
   p {
     margin-bottom: 0.5rem;
   }
 
   .image {
-    width: 150px;
-    height: 150px;
+    width: var(--image-width);
+    height: var(--image-width);
   }
 </style>

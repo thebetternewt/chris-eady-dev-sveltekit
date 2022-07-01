@@ -4,9 +4,9 @@
 </script>
 
 <Section>
-  <h1 class="mb-6" style="font-family: var(--font-mono);">Hello. I am...</h1>
-  <h2 class="font-bold text-7xl mb-6">Chris Eady.</h2>
-  <h3 class="font-bold text-5xl mb-6 opacity-70 leading-tight">
+  <h1 class="mb-4 md:mb-6 text-teal-300" style="font-family: var(--font-mono);">Hello. I am...</h1>
+  <h2 class="font-bold text-5xl md:text-7xl mb-4 md:mb-6">Chris Eady.</h2>
+  <h3 class="font-bold text-4xl md:text-5xl mb-4 md:mb-6 opacity-70 leading-snug md:leading-tight">
     I build full-stack things for the web.
   </h3>
   <p class="max-w-xl mb-12">

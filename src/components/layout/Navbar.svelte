@@ -3,6 +3,13 @@
   style="height: 60px;"
 >
   <div class="logo bg-blue-900">IMG</div>
+  <nav class="ml-auto">
+    <ul class="flex gap-2">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 </div>
 
 <style lang="postcss">

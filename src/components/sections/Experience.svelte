@@ -38,7 +38,7 @@
   $: currentWork = work[workIndex];
 </script>
 
-<Section sectionNo={2} title="Where I've worked">
+<Section id="experience" sectionNo={2} title="Where I've worked">
   <div class="w-full flex" style="min-height: 340px;">
     <div role="tablist" class="w-max">
       {#each work as item, index (item.label)}
@@ -50,15 +50,25 @@
       {/each}
     </div>
     <div role="tabpanel" class="w-full border border-blue-500 p-4">
-      <h3>{currentWork.position} @ {currentWork.location}</h3>
-      <p class="mb-2">{currentWork.range}</p>
+      <h3 class="mb-2">
+        {currentWork.position} <span class="text-teal-300">@ {currentWork.location}</span>
+      </h3>
+      <p class="mb-2 text-white/80" style="font-family: var(--font-mono);">{currentWork.range}</p>
       <div>
-        <ul class="list-disc px-4">
+        <ul class="px-4">
           {#each currentWork.details as detail}
-            <li>{detail}</li>
+            <li class="before:text-teal-300 text-sm py-1">{detail}</li>
           {/each}
         </ul>
       </div>
     </div>
   </div>
 </Section>
+
+<style>
+  li:before {
+    display: inline-block;
+    content: '> ';
+    margin-right: 5px;
+  }
+</style>
