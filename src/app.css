@@ -1,0 +1,49 @@
+@import '@fontsource/merriweather';
+@import '@fontsource/roboto-mono';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  font-family: "Merriweather","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+  --navy: rgb(3, 56, 74);
+  --light-navy: rgb(2, 104, 138);
+  --content-width: 700px;
+}
+
+html {
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue var(--navy);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--navy);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--light-navy);
+  border-radius: 20px;
+  border: 3px solid var(--navy);
+}
+
+body {
+  background-color: var(--navy);
+  color: white;
+}
+
+main > section {
+  max-width: var(--content-width);
+  margin: 0 auto;
+} 
