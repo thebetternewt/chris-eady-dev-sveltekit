@@ -7,39 +7,45 @@
 
 
 :root {
+  color-scheme: dark;
+
   font-family: "Merriweather","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
   --font-mono: 'Roboto Mono', monospace;
-  --navy: rgb(3, 56, 74);
-  --light-navy: rgb(2, 104, 138);
+  --navy: 195 92% 15%;
+  --navy-hsl: hsl(var(--navy));
+  --light-navy: hsl(195, 97%, 27%);
   --content-width: 700px;
+  --navbar-height: 4rem;
 }
 
-html {
-}
 
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: blue var(--navy);
+  scrollbar-color: blue var(--navy-hsl);
 }
 
 /* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--navy);
+  background: var(--navy-hsl);
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--light-navy);
+  background-color: #919191;
   border-radius: 20px;
   border: 3px solid var(--navy);
 }
 
+html {
+  scroll-padding-top: var(--navbar-height);
+}
+
 body {
-  background-color: var(--navy);
+  background-color: var(--navy-hsl);
   color: white;
 }
 
