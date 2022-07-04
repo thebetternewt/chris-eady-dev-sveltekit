@@ -4,7 +4,7 @@
 
 <section id="contact" class="flex flex-col justify-center my-24">
   <div class="text-center">
-    <h2 class="mr-2 text-teal-200 text-xl mb-4" style="font-family: var(--font-mono);">
+    <h2 class="mr-2 text-primary text-xl mb-4" style="font-family: var(--font-mono);">
       04. Contact
     </h2>
     <h3 class="font-bold text-3xl mb-6">Get in Touch</h3>

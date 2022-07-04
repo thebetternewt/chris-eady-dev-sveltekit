@@ -1,4 +1,5 @@
 <script lang="ts">
+  import codeImg from '$lib/assets/code.png';
   import AnimatedHamburger from './AnimatedHamburger.svelte';
 
   type NavLinkProps = {
@@ -34,20 +35,24 @@
 <svelte:window bind:scrollY={currentY} />
 
 <header
-  class="fixed top-0 flex items-center bg-primary/70 shadow-md h-[var(--navbar-height)] w-full z-10 backdrop-blur-sm transition-transform ease-in overflow-hidden"
+  class="fixed top-0 flex items-center bg-white/80 shadow-md h-[var(--navbar-height)] w-full z-10 backdrop-blur-sm transition-transform ease-in overflow-hidden"
   class:motion-safe:-translate-y-full={offscreen}
   class:h-screen={menuOpen}
   class:flex-col={menuOpen}
   bind:clientHeight
 >
   <div class="container flex items-center px-2 py-2 md:px-0">
-    <a href="/#"><div class="logo bg-blue-900">IMG</div></a>
+    <a href="/#"
+      ><div class="logo border-4 border-black/70 rounded-md flex items-center justify-center">
+        <img src={codeImg} alt="code" />
+      </div></a
+    >
     <nav class="ml-auto hidden md:block">
       <ul class="flex gap-6">
         {#each links as link, index}
           <li>
             <a href={link.href} class="text-sm">
-              <span class="text-teal-300 mr-1">{getPaddedNum(index + 1)}</span>{link.label}
+              <span class="text-primary mr-1">{getPaddedNum(index + 1)}</span>{link.label}
             </a>
           </li>
         {/each}
@@ -69,7 +74,7 @@
           {#each links as link, index}
             <li on:click={() => (menuOpen = false)}>
               <a href={link.href}>
-                <span class="text-teal-300 mr-1">{getPaddedNum(index + 1)}</span>{link.label}
+                <span class="text-primary mr-1">{getPaddedNum(index + 1)}</span>{link.label}
               </a>
             </li>
           {/each}

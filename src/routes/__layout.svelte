@@ -9,15 +9,22 @@
 </main>
 <footer class="py-8 text-center text-sm">
   <p style="font-family: var(--font-mono);">
-    Designed and Built by
+    Built by
     <a
       href="https://twitter.com/chris_eady"
       rel="noopener noreferrer"
       target="_blank"
-      class="underline text-teal-300"
+      class="text-primary"
     >
       @chris_eady
     </a>
+    with
+    <a
+      href="https://kit.svelte.dev/"
+      rel="noopener noreferrer"
+      target="_blank"
+      class="underline underline-offset-2">SvelteKit</a
+    >
   </p>
 </footer>
 

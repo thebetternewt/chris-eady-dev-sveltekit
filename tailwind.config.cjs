@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+  content: ['./src/**/*.{html,js,svelte,ts,css}'],
   theme: {
     container: {
       center: true,
     },
     extend: {
       colors: {
-        primary: 'hsl(var(--navy) / <alpha-value>)',
+        primary: 'hsl(var(--color-orange) / <alpha-value>)',
       },
     },
   },

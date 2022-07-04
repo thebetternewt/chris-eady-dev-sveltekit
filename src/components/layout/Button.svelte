@@ -1,7 +1,8 @@
 <script>
   export let url = '';
 
-  const classes = 'w-16 border-2 px-6 py-4 rounded hover:bg-slate-400/40 transition-all';
+  const classes =
+    'w-16 border-2 border-primary text-primary px-6 py-4 rounded hover:bg-primary hover:text-white transition-all';
 </script>
 
 {#if url}

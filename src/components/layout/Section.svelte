@@ -10,19 +10,17 @@
   }
 </script>
 
-<section
-  {id}
-  class="flex flex-col justify-center items-start min-h-screen py-24 w-full my-0 mx-auto"
-  style="max-width: var(--content-width);"
->
-  {#if title}
-    <h2
-      class="numbered-heading font-bold text-xl flex items-center w-full mb-6 whitespace-nowrap after:w-full md:after:w-80"
-    >
-      <span class="mr-2 text-teal-200 text-lg">{padded}</span>{title}
-    </h2>
-  {/if}
-  <slot />
+<section {id} class="flex flex-col justify-center items-start my-24 w-full mx-auto">
+  <div class="container">
+    {#if title}
+      <h2
+        class="numbered-heading font-bold text-xl flex items-center w-full mb-6 whitespace-nowrap after:w-full md:after:w-80"
+      >
+        <span class="mr-2 text-primary text-lg">{padded}</span>{title}
+      </h2>
+    {/if}
+    <slot />
+  </div>
 </section>
 
 <style lang="postcss">

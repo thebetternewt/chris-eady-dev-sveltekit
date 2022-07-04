@@ -1,34 +1,55 @@
-<script>
+<script lang="ts">
   import Section from '../layout/Section.svelte';
+  import UlListItem from '../layout/UlListItem.svelte';
+
+  const tech: string[] = [
+    'JavaScript',
+    'TypeScript',
+    'React',
+    'Redux',
+    'Svelte',
+    'NodeJS',
+    'Kotlin',
+    'Python',
+  ];
 </script>
 
 <Section id="about" sectionNo={1} title="About Me">
-  <div class="flex flex-col md:flex-row gap-12">
-    <div>
-      <div>
-        <p>
-          Hello! My name is Chris, and I enjoy building useful tools for clients and customers. I
-          began exploring web development back in 2012 with HTML, CSS, an Ruby on Rails.
-        </p>
-        <p>
-          Since then, I've grown to love frontend web developent, made the shift to a professional
-          web developer, and eventually to a full-stack Software Engineer
-        </p>
-        <p>Here are a few technologies I've been working with recently:</p>
-        <ul>
-          <li>JavaScript</li>
-          <li>TypeScript</li>
-          <li>React</li>
-          <li>Svelte</li>
-          <li>NodeJS</li>
-          <li>Kotlin</li>
-          <li>Python</li>
-        </ul>
-      </div>
+  <div class="flex flex-col md:block">
+    <div class="image bg-gray-500 order-2 md:float-right mt-8 mx-auto md:m-6">
+      Image Placeholder
     </div>
-    <div class="text-center w-full">
+    <p class="mb-4">
+      Hello! My name is Chris, and I enjoy building useful tools for clients, customers, and for
+      fun! I am a self-taught developer (but aren’t we all at some point?). I took an IT support job
+      in 2013, and began teaching myself how to code when I saw some co-workers doing the same
+      things every day in Excel spreadsheets. I wanted to make their jobs easier and more error
+      free. During this time, I also began learning web development with Ruby and Ruby-on-Rails and
+      TDD for a side project.
+    </p>
+    <p class="mb-4">
+      Eventually I hit a limit and wanted to build more interactive interfaces, so I learned React
+      and LOVED the JavaScript/TypeScript environment. Fast-forward a few years, and I took my first
+      web developer position with our university’s library system in 2018. And after finishing my
+      Master’s degree, I was able to take a true Software Engineer position with HBK Engineering
+      Solutions.
+    </p>
+    <p class="mb-4">
+      Though my work sometimes leads me to code up things in Python or Kotlin, my first love is
+      JavaScript. I enjoy building elegant, interactive interfaces with React that fulfill the needs
+      of others. Lately, I have also been exploring Svelte and SvelteKit. I’ll admit, it is enticing
+      me away from React for some projects as it is so simple to use, and I can focus on HTML and
+      CSS first.
+    </p>
+    <p class="mb-4">Here are a few technologies I've been working with recently:</p>
+    <ul class="h-32 max-w-sm flex flex-col flex-wrap">
+      {#each tech as item}
+        <UlListItem>{item}</UlListItem>
+      {/each}
+    </ul>
+    <!-- <div class="text-center w-full">
       <div class="image bg-gray-500 my-0 mx-auto">Image Placeholder</div>
-    </div>
+    </div> -->
   </div>
 </Section>
 
@@ -37,12 +58,12 @@
     --image-width: 300px;
   }
 
-  p {
-    margin-bottom: 0.5rem;
-  }
-
   .image {
     width: var(--image-width);
     height: var(--image-width);
+  }
+
+  li {
+    background-color: red;
   }
 </style>

@@ -6,18 +6,22 @@
 @tailwind utilities;
 
 
-:root {
-  color-scheme: dark;
+@layer base {
+  :root {
+    color-scheme: dark;
 
-  font-family: "Merriweather","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
-  --font-mono: 'Roboto Mono', monospace;
-  --navy: 195 92% 15%;
-  --navy-hsl: hsl(var(--navy));
-  --light-navy: hsl(195, 97%, 27%);
-  --content-width: 700px;
-  --navbar-height: 4rem;
+    font-family: "Merriweather","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+    --color-orange: 15deg 74% 54%;
+    --orange-hsl: hsl(15, 74%, 54%);
+    --text-primary: 0deg, 0%, 20%;
+    --navy: 195deg 92% 15%;
+    --navy-hsl: hsl(var(--navy));
+    --light-navy: hsl(195, 97%, 27%);
+    --content-width: 700px;
+    --navbar-height: 4rem;
+  }
 }
-
 
 /* Works on Firefox */
 * {
@@ -45,8 +49,18 @@ html {
 }
 
 body {
-  background-color: var(--navy-hsl);
-  color: white;
+  /* background-color: var(--navy-hsl); */
+  /* color: white; */
+  background-color: white;
+  color: hsl(var(--text-primary))
+}
+
+a {
+  transition: all 150ms ease;
+}
+
+a:hover {
+  color: hsl(var(--color-orange))
 }
 
 main > section {

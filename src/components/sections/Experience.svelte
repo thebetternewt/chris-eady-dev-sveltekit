@@ -1,5 +1,6 @@
 <script lang="ts">
   import Section from '../layout/Section.svelte';
+  import UlListItem from '../layout/UlListItem.svelte';
 
   type WorkItem = {
     label: string;
@@ -51,24 +52,16 @@
     </div>
     <div role="tabpanel" class="w-full border border-blue-500 p-4">
       <h3 class="mb-2">
-        {currentWork.position} <span class="text-teal-300">@ {currentWork.location}</span>
+        {currentWork.position} <span class="text-primary">@ {currentWork.location}</span>
       </h3>
       <p class="mb-2 text-white/80" style="font-family: var(--font-mono);">{currentWork.range}</p>
       <div>
         <ul class="px-4">
           {#each currentWork.details as detail}
-            <li class="before:text-teal-300 text-sm py-1">{detail}</li>
+            <UlListItem>{detail}</UlListItem>
           {/each}
         </ul>
       </div>
     </div>
   </div>
 </Section>
-
-<style>
-  li:before {
-    display: inline-block;
-    content: '> ';
-    margin-right: 5px;
-  }
-</style>
