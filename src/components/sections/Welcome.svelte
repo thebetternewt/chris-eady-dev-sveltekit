@@ -4,7 +4,7 @@
 </script>
 
 <Section>
-  <div class="min-h-screen pt-24">
+  <div class="min-h-screen pt-48">
     <h1 class="mb-4 md:mb-6">
       <span class="block text-xl mb-4 md:mb-6">Hello. My name is</span>
       <span class="font-bold text-5xl md:text-7xl text-primary">Chris Eady.</span>
@@ -20,6 +20,9 @@
       customer workflows at HBK.
     </p>
     <div class="flex gap-4">
+      <div>
+        <Button url="#about" filled>Read More</Button>
+      </div>
       <div>
         <Button url="https://github.com/thebetternewt">GitHub</Button>
       </div>

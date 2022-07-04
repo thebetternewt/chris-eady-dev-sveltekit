@@ -10,7 +10,8 @@
   :root {
     color-scheme: dark;
 
-    font-family: "Merriweather","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+    --font-serif: "Merriweather", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --font-sans-serif: "Helvetica Neue","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
     --font-mono: 'Roboto Mono', monospace;
     --color-orange: 15deg 74% 54%;
     --orange-hsl: hsl(15, 74%, 54%);
@@ -23,34 +24,12 @@
   }
 }
 
-/* Works on Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: blue var(--navy-hsl);
-}
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 8px;
-}
-
-*::-webkit-scrollbar-track {
-  background: var(--navy-hsl);
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #919191;
-  border-radius: 20px;
-  border: 3px solid var(--navy);
-}
-
 html {
   scroll-padding-top: var(--navbar-height);
+  font-family: var(--font-serif);
 }
 
 body {
-  /* background-color: var(--navy-hsl); */
-  /* color: white; */
   background-color: white;
   color: hsl(var(--text-primary))
 }
