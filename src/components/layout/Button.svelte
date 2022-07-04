@@ -10,7 +10,7 @@
   if (size === 'sm') {
     classes += ' px-6 py-2';
   } else {
-    classes += ' px-6 py-4';
+    classes += ' px-6 py-3';
   }
 
   const outlinedClasses = ' text-primary hover:bg-primary hover:text-white';

@@ -1,6 +1,7 @@
 <script lang="ts">
   import codeImg from '$lib/assets/code.png';
   import AnimatedHamburger from './AnimatedHamburger.svelte';
+  import Button from './Button.svelte';
 
   type NavLinkProps = {
     href: string;
@@ -9,11 +10,8 @@
   const links: NavLinkProps[] = [
     { href: '#about', label: 'About' },
     { href: '#experience', label: 'Experience' },
-    { href: '#projects', label: 'Projects' },
     { href: '#contact', label: 'Contact' },
   ];
-
-  const getPaddedNum = (num: number) => num.toString().padStart(2, '0') + '.';
 
   let menuOpen = false;
   let prevY: number;
@@ -49,10 +47,10 @@
     >
     <nav class="ml-auto hidden md:block">
       <ul class="flex gap-6">
-        {#each links as link, index}
+        {#each links as link}
           <li>
             <a href={link.href} class="text-sm">
-              <span class="text-primary mr-1">{getPaddedNum(index + 1)}</span>{link.label}
+              {link.label}
             </a>
           </li>
         {/each}
@@ -71,16 +69,17 @@
         class="md:hidden absolute top-[50px] left-0 w-full h-full flex items-center justify-center"
       >
         <ul class="flex flex-col gap-8 transform translate-y-[-50px]">
-          {#each links as link, index}
+          {#each links as link}
             <li on:click={() => (menuOpen = false)}>
               <a href={link.href}>
-                <span class="text-primary mr-1">{getPaddedNum(index + 1)}</span>{link.label}
+                {link.label}
               </a>
             </li>
           {/each}
         </ul>
       </nav>
     {/if}
+    <div class="ml-4"><Button url="/resume-july-2022.pdf" size="sm">Resume</Button></div>
   </div>
 </header>
 

@@ -62,8 +62,4 @@
     width: var(--image-width);
     height: var(--image-width);
   }
-
-  li {
-    background-color: red;
-  }
 </style>
