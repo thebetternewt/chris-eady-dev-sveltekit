@@ -61,7 +61,7 @@
         {/each}
       </ul>
     </nav>
-    <div class="ml-auto md:ml-4"><Button url="/resume-july-2022.pdf" size="sm">Resume</Button></div>
+    <div class="ml-auto md:ml-6"><Button url="/resume-july-2022.pdf" size="sm">Resume</Button></div>
     <div class="flex items-center md:hidden ml-4">
       <AnimatedHamburger
         open={menuOpen}

@@ -5,6 +5,9 @@
   import Contact from '../components/sections/Contact.svelte';
 </script>
 
+<svelte:head>
+  <title>Chris Eady | Software Engineer</title>
+</svelte:head>
 <Welcome />
 <About />
 <Experience />

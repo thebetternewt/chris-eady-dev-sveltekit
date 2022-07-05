@@ -7,8 +7,8 @@
 <main class="px-4 md:px-4">
   <slot />
 </main>
-<footer class="py-8 text-center text-sm">
-  <p style="font-family: var(--font-mono);">
+<footer class="py-8 text-center text-sm" style="font-family: var(--font-mono);">
+  <p>
     Built by
     <a
       href="https://twitter.com/chris_eady"
@@ -24,6 +24,14 @@
       rel="noopener noreferrer"
       target="_blank"
       class="underline underline-offset-2">SvelteKit</a
+    >
+  </p>
+  <p class="text-xs text-gray-300 mt-2">
+    Inspired by <a
+      href="https://brittanychiang.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="underline">https://brittanychiang.com/</a
     >
   </p>
 </footer>
