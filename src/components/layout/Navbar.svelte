@@ -17,6 +17,7 @@
   let prevY: number;
   let currentY: number;
   let clientHeight: number;
+  let innerWidth: number;
 
   const deriveDirection = (y: number) => {
     const direction = !prevY || prevY < y ? 'down' : 'up';
@@ -27,13 +28,17 @@
 
   $: scrollDirection = deriveDirection(currentY);
   $: offscreen = scrollDirection === 'down' && currentY > clientHeight * 4;
-  $: console.log('menuOpen:', menuOpen);
+  $: {
+    if (innerWidth >= 768) {
+      menuOpen = false;
+    }
+  }
 </script>
 
-<svelte:window bind:scrollY={currentY} />
+<svelte:window bind:scrollY={currentY} bind:innerWidth />
 
 <header
-  class="fixed top-0 flex items-center bg-white/80 shadow-md h-[var(--navbar-height)] w-full z-10 backdrop-blur-sm transition-transform ease-in overflow-hidden"
+  class="fixed top-0 flex items-center bg-white/90 md:bg-white/80 shadow-md h-[var(--navbar-height)] w-full z-10 backdrop-blur-sm transition-transform ease-in overflow-hidden"
   class:motion-safe:-translate-y-full={offscreen}
   class:h-screen={menuOpen}
   class:flex-col={menuOpen}
@@ -56,7 +61,8 @@
         {/each}
       </ul>
     </nav>
-    <div class="flex items-center md:hidden ml-auto">
+    <div class="ml-auto md:ml-4"><Button url="/resume-july-2022.pdf" size="sm">Resume</Button></div>
+    <div class="flex items-center md:hidden ml-4">
       <AnimatedHamburger
         open={menuOpen}
         onOpen={() => (menuOpen = true)}
@@ -68,9 +74,12 @@
       <nav
         class="md:hidden absolute top-[50px] left-0 w-full h-full flex items-center justify-center"
       >
-        <ul class="flex flex-col gap-8 transform translate-y-[-50px]">
+        <ul class="flex flex-col transform translate-y-[-50px]">
           {#each links as link}
-            <li on:click={() => (menuOpen = false)}>
+            <li
+              on:click={() => (menuOpen = false)}
+              class="py-6 hover:text-primary hover:underline underline-offset-2 cursor-pointer"
+            >
               <a href={link.href}>
                 {link.label}
               </a>
@@ -79,7 +88,6 @@
         </ul>
       </nav>
     {/if}
-    <div class="ml-4"><Button url="/resume-july-2022.pdf" size="sm">Resume</Button></div>
   </div>
 </header>
 
@@ -87,9 +95,5 @@
   .logo {
     width: 50px;
     height: 50px;
-  }
-
-  li {
-    font-family: var(--font-mono);
   }
 </style>

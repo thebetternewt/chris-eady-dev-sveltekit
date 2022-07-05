@@ -3,7 +3,7 @@
   export let title = '';
 </script>
 
-<section {id} class="flex flex-col justify-center items-start w-full mx-auto py-24">
+<section {id} class="flex flex-col justify-center items-start w-full mx-auto my-24">
   <div class="container">
     {#if title}
       <h2
